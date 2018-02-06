@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auttle-shiro/auttle-shiro.iml" filepath="$PROJECT_DIR$/auttle-shiro/auttle-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/github-shiro.iml" filepath="$PROJECT_DIR$/github-shiro.iml" />
+    </modules>
+  </component>
+</project>
