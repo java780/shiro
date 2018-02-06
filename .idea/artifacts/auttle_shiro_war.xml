@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="auttle-shiro:war">
+    <output-path>$PROJECT_DIR$/auttle-shiro/target</output-path>
+    <root id="archive" name="auttle-shiro.war">
+      <element id="artifact" artifact-name="auttle-shiro:war exploded" />
+    </root>
+  </artifact>
+</component>
