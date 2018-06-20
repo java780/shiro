@@ -3,6 +3,7 @@ package com.auttle.shiro;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -36,6 +37,53 @@ public class AuthenticatorTest {
         PrincipalCollection principalCollection = subject.getPrincipals();
 
         Assert.assertEquals(2,principalCollection.asList().size());
+    }
+
+    @Test
+    public void testAtLeastOneSuccessfulStrategyWithSuccess(){
+
+        login("classpath:shiro-authenticator-atleastone-success.ini");
+
+        Subject subject = SecurityUtils.getSubject();
+
+        PrincipalCollection principalCollection = subject.getPrincipals();
+
+        Assert.assertEquals(2,principalCollection.asList().size());
+    }
+
+    @Test
+    public void testFirstOneSuccessfulStrategyWithSuccess(){
+
+        login("classpath:shiro-authenticator-first-success.ini");
+
+        Subject subject = SecurityUtils.getSubject();
+
+        PrincipalCollection principalCollection = subject.getPrincipals();
+
+        Assert.assertEquals(1,principalCollection.asList().size());
+    }
+
+    @Test
+    public void testAtLeastTwoStrategyWithSuccess(){
+
+        login("classpath:shiro-authenticator-atleastTwo-success.ini");
+
+        Subject subject = SecurityUtils.getSubject();
+
+        PrincipalCollection principalCollection = subject.getPrincipals();
+
+        Assert.assertEquals(1,principalCollection.asList().size());
+    }
+
+    @Test
+    public void testOnlyOneStrategyWithSuccess(){
+        login("classpath:shiro-authenticator-onlyone-success.ini");
+
+        Subject subject = SecurityUtils.getSubject();
+
+        PrincipalCollection principalCollection = subject.getPrincipals();
+
+        Assert.assertEquals(1,principalCollection.asList().size());
     }
 
 
